@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COFFEE SHOP</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Isometra&family=Playwrite+CA+Guides&display=swap');
+  .font-isometra {
+    font-family: "Isometra", sans-serif;
+  }
+  .font-playwrite {
+    font-family: "Playwrite CA Guides", cursive;
+  }
+  .popup{
+    position: absolute;
+  }
+  </style>
+</head>
+<body>
+    <header  class="fixed top-0 left-0 right-0 z-50 opacity-95" id="header">
+        <nav class="flex items-center justify-between px-5 py-6 bg-amber-950 text-white">
+
+            <a href="#home" class="flex flex-row justify-between items-center ml-10 font-isometra">
+                <h1 class="text-3xl uppercase animate-bounce"><span class="text-zinc-600">COFFEE</span> & <span class="text-amber-200">MLIK</span></h1>
+            </a>
+
+            <ul class="flex items-center gap-10 uppercase">
+
+                <li>
+                    <a href="#home" class="flex items-center"><h1 class="text-xl font-isometra pr-1.5">HOME</h1><i class="fa-solid fa-house text-2xl"></i></a>
+                </li>
+
+                <li>
+                    <a href="#about" class="flex items-center"><h1 class="text-xl font-isometra pr-1.5">ABOUT</h1><i class="fa-solid fa-newspaper text-2xl"></i></a>
+                </li>
+
+                <li>
+                    <a href="#prices" class="flex items-center"><h1 class="text-xl font-isometra pr-1.5">PRICES</h1><i class="fa-solid fa-dollar-sign text-2xl"></i></a>
+                </li>
+
+                <li>
+                    <a href="#branches" class="flex items-center"><h1 class="text-xl font-isometra pr-1.5">OUR BRANCHES</h1><i class="fa-solid fa-map-location-dot text-2xl"></i></a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="flex items-center"><h1 class="text-xl font-isometra pr-1.5">CONTACT</h1><i class="fa-solid fa-phone text-2xl"></i></a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <section class="flex items-center justify-center bg-amber-900 m-auto h-screen gap-15 overflow-hidden" id="home">
+        <div class="flex flex-col items-center"> 
+            <img src="assets/cappuccino.png" alt="Cappuccino" class="w-64 h-64">
+            <img src="assets/coffee-milk.png" alt="Coffee Milk" class="w-64 h-64">
+        </div>
+        <div class="flex flex-col items-center justify-center gap-5">
+            <h1 class="text-4xl font-isometra text-white">WELCOME TO</h1> 
+            <h1 class="text-6xl font-isometra text-white"><span class="text-zinc-500">COFFEE</span> & <span class="text-amber-300">MLIK</span></h1></h1>
+            <h1 class="text-4xl font-isometra text-white">COFFEE SHOP !</h1>
+            <span class="font-playwrite text-3xl text-white"> What are you thinking?</span>
+            <a href="#prices" class="flex items-center justify-center font-isometra mt-8 text-white bg-blue-500 w-64 h-12 rounded-xl hover:bg-blue-600 transition duration-300">SHOW OUR PRODUCTS</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <img src="assets/espresso.png" alt="Espresso" class="w-64 h-64">
+            <img src="assets/coffee-latte.webp" alt="Latte" class="w-auto h-64">
+        </div>
+    </section>
+    <section id="about" class="flex flex-col items-center justify-center h-[176vh] pt-10 bg-amber-700">
+        <h1 class="text-5xl text-white font-isometra italic">WHO ARE WE ?</h1>
+        <div class="flex items-center justify-center m-5 text-white">
+            <img src="assets/cappuccino.png" alt="capotchino"  class="w-64 h-auto -rotate-12">
+            <p class="text-2xl font-playwrite ml-5 -mr-30 max-w-3xl">We specialize in serving a wide variety of coffees and beverages crafted especially for you!</p>
+            <img src="assets/coffee.png" alt="coffee" class="w-64 h-auto -rotate-12">
+        </div>
+        <div class="flex items-center justify-center text-white">
+            <img src="assets/+50.png" alt="+50" class="w-120 h-auto">
+            <p class="text-2xl font-playwrite max-w-3xl">in 2005, we have grown to over 50 branches across multiple countries.</p>
+        </div>
+        <div class="flex items-center justify-center text-white">
+            <p class="text-2xl font-playwrite max-w-3xl">We boast a 9.5 star rating for our service</p>
+            <img src="assets/9.5 stars.png" alt="9.5 stars" class="w-120 h-auto">
+        </div>
+        <div class="flex items-center justify-center text-white">
+            <img src="assets/orderProduct.png" alt="order the product" class="w-162 h-auto">
+            <p class="text-2xl font-playwrite max-w-3xl mr-15">ensuring a seamless experience from the moment you place your order until it arrives at your doorstep for you to enjoy.</p>
+        </div>
+    </section>
+    <section id="prices" class="relative h-[160vh]">
+            <div class="absolute top-5 right-5">
+                <div class="flex items-center justify-center w-12 h-12 bg-orange-800 rounded-full transition duration-300 hover:scale-110"><i class="fa-solid fa-cart-shopping text-white text-2xl"></i></div>
+                <div class="hidden -top-1 -right-1 w-5 h-5 text-center rounded-full text-white mb-8 bg-red-500" id="number-sells">1</div>
+            </div>
+        <div class="flex flex-col items-center justify-start h-full p-5 gap-10 bg-red-950">
+            <h1 class="text-4xl text-red-500 font-isometra">ORDER YOUR COFFEE</h1>
+            <h1 class="text-3xl font-isometra"><span class="text-stone-600">From Th</span><span class="text-red-200">e Menu</span></h1>
+            <div class="grid grid-cols-4 gap-5">
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-1">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu1.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Espresso</h3>
+                    <span class="text-2xl font-isometra text-red-500">$2.75</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-1">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-2">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu2.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Cappuccino</h3>
+                    <span class="text-2xl font-isometra text-red-500">$4.25</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-2">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-3">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu3.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Turkish Coffee</h3>
+                    <span class="text-2xl font-isometra text-red-500">$3.50</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-3">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-4">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu4.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Arabic Coffee</h3>
+                    <span class="text-2xl font-isometra text-red-500">$3.50</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-4">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-5">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu5.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Mint Tea</h3>
+                    <span class="text-2xl font-isometra text-red-500">$3.00</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-5">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-6">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu6.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Masala Chai</h3>
+                    <span class="text-2xl font-isometra text-red-500">$4.50</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-6">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-7">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu7.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Cafe de Olla</h3>
+                    <span class="text-2xl font-isometra text-red-500">$4.50</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-7">ORDER</button>
+                </div>           
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-8">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu8.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Vietnamese Coffee</h3>
+                    <span class="text-2xl font-isometra text-red-500">$5.25</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-8">ORDER</button>
+                </div>                 
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-9">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu9.png" alt="" class="max-h-full max-w-full object-contain ">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Chocolate milkshake</h3>
+                    <span class="text-2xl font-isometra text-red-500">$5.75</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-9">ORDER</button>
+                </div>                 
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-10">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu10.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Hot Chocolate</h3>
+                    <span class="text-2xl font-isometra text-red-500">$4.25</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-10">ORDER</button>
+                </div>                 
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-11">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu11.png" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Bubble Tea</h3>
+                    <span class="text-2xl font-isometra text-red-500">$6.25</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-11">ORDER</button>
+                </div>                 
+                <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-12">
+                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="h-44 w-full flex items-center justify-center">
+                        <img src="assets/menu12.png" alt="" class="h-36 max-w-full object-contain">
+                    </div>
+                    <h3 class="text-xl text-white font-isometra">Cortado</h3>
+                    <span class="text-2xl font-isometra text-red-500">$3.75</span>
+                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-12">ORDER</button>
+                </div>                 
+            </div>
+        </div>
+    </section>
+    <section id="branches" class="flex items-center justify-center gap-16 p-5 h-screen cursor-pointer bg-amber-900">
+        <div class="flex flex-col items-center justify-center gap-5">
+            <h1 class="text-4xl text-stone-300 font-isometra">Our Branches</h1>
+            <p class="text-3xl text-amber-400 font-playwrite">Find us in the heart of the city!</p>
+            <input type="text" placeholder="Enter your location" class="w-full h-12 p-2 bg-zinc-800 text-white rounded-lg placeholder:text-zinc-500 border border-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="w-210 h-160 border border-zinc-800 p-2 rounded-lg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799141878!2d-74.2598756870919!3d40.69767006308413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250b7e6b8e5a7%3A0x4c8b8b8b8b8b8b8b!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1616161616161" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
+        </div>
+    </section>
+    <section id="contact" class="flex flex-col items-center justify-center gap-16 h-screen bg-green-500">
+        <h1 class="text-white text-4xl font-isometra">Contact Us</h1>
+        <h3 class="text-white text-2xl font-playwrite max-w-4xl">if you are interested in learning more about our products <span class="flex items-center justify-center mt-2">and services,contact us with one of this ways</span></h3>
+        <div class="flex gap-16">
+            <a href="#" target="_blank"><i class="fa-brands fa-youtube text-6xl text-white transition duration-300 hover:scale-130 "></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram text-6xl text-white transition duration-300 hover:scale-120"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook text-6xl text-white transition duration-300 hover:scale-120"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-discord text-6xl text-white transition duration-300 hover:scale-120"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-reddit-alien text-6xl text-white transition duration-300 hover:scale-120"></i></a>
+        </div>
+        <span class="text-white text-lg font-isometra">OR</span>
+        <div>
+            <h3 class="flex items-center justify-center text-white text-xl mb-4 font-playwrite">Send us an email</h3>
+            <input type="email" placeholder="Enter your email" class="w-150 h-12 p-2 bg-green-700 text-white rounded-lg placeholder:text-white border border-white focus:outline-none focus:ring-2">
+        </div>
+    </section>
+    <footer class="bg-zinc-800 text-white p-2 text-center">© 2026 Master Programming. All rights reserved.</footer>
+    <script src="index.js"></script>
+</body>
+</html>
