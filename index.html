@@ -21,10 +21,10 @@
 </head>
 <body>
     <header  class="fixed top-0 left-0 right-0 z-50 opacity-95" id="header">
-        <nav class="flex items-center justify-between px-5 py-6 bg-amber-950 text-white">
+        <nav class="flex items-center justify-between px-3 py-3 bg-amber-800 text-white">
 
             <a href="#home" class="flex flex-row justify-between items-center ml-10 font-isometra">
-                <h1 class="text-3xl uppercase animate-bounce"><span class="text-zinc-600">COFFEE</span> & <span class="text-amber-200">MLIK</span></h1>
+                <h1 class="text-3xl uppercase animate-bounce"><span class="text-zinc-700">COFFEE</span> & <span class="text-amber-200">MLIK</span></h1>
             </a>
 
             <ul class="flex items-center gap-10 uppercase">
@@ -89,12 +89,17 @@
             <p class="text-2xl font-playwrite max-w-3xl mr-15">ensuring a seamless experience from the moment you place your order until it arrives at your doorstep for you to enjoy.</p>
         </div>
     </section>
-    <section id="prices" class="relative h-[160vh]">
-            <div class="absolute top-5 right-5">
+    <section id="prices" class="relative h-[160vh] overflow-hidden">
+            <div class="fixed top-60 right-5 shadow-md shadow-white rounded-full hover:shadow-lg hover:shadow-white" id="cart-shopping">
                 <div class="flex items-center justify-center w-12 h-12 bg-orange-800 rounded-full transition duration-300 hover:scale-110"><i class="fa-solid fa-cart-shopping text-white text-2xl"></i></div>
-                <div class="hidden -top-1 -right-1 w-5 h-5 text-center rounded-full text-white mb-8 bg-red-500" id="number-sells">1</div>
+                <div class="hidden -top-1 -right-1 w-5 h-5 text-center rounded-full text-white mb-8 bg-red-500" id="number-sells"></div>
             </div>
-        <div class="flex flex-col items-center justify-start h-full p-5 gap-10 bg-red-950">
+
+            <div class="fixed grid grid-cols-3 gap-4 w-1/2 h-full top-10 right-185 p-12 bg-purple-700 transition-all duration-300 overflow-y-auto" id="products-section">
+                <div class=" absolute w-24 h-12 text-white text-2xl top-7 right-5 rounded-lg bg-amber-800" id="total-price"><h1></h1></div>
+            </div>
+
+        <div class="flex flex-col items-center justify-start h-full p-5 gap-10 bg-red-950 from-red-950 to-amber-900">
             <h1 class="text-4xl text-red-500 font-isometra">ORDER YOUR COFFEE</h1>
             <h1 class="text-3xl font-isometra"><span class="text-stone-600">From Th</span><span class="text-red-200">e Menu</span></h1>
             <div class="grid grid-cols-4 gap-5">
@@ -209,7 +214,7 @@
             </div>
         </div>
     </section>
-    <section id="branches" class="flex items-center justify-center gap-16 p-5 h-screen cursor-pointer bg-amber-900">
+    <section id="branches" class="flex items-center justify-center gap-16 p-5 h-screen cursor-pointer bg-amber-900 ">
         <div class="flex flex-col items-center justify-center gap-5">
             <h1 class="text-4xl text-stone-300 font-isometra">Our Branches</h1>
             <p class="text-3xl text-amber-400 font-playwrite">Find us in the heart of the city!</p>
