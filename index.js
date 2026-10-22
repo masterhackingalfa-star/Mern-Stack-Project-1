@@ -1,48 +1,99 @@
 const cartShopping = document.getElementById('cart-shopping');
 const productsSection = document.getElementById('products-section');
-const sellsNum = document.getElementById('number-sells');
-let count = 0;
+const sellsNumTotale = document.getElementById('number-sells-totale');
+let countToltale = 0;
+let cartShoppingBag = [];
+const totalePriceCust = document.getElementById('total-price'); 
+const prices = [
+    {id: 1, price: 2.75},
+    {id: 2, price: 4.25},
+    {id: 3, price: 3.50},
+    {id: 4, price: 3.50},
+    {id: 5, price: 3.00},
+    {id: 6, price: 4.50},
+    {id: 7, price: 4.50},
+    {id: 8, price: 5.25},
+    {id: 9, price: 5.75},
+    {id: 10, price: 4.25},
+    {id: 11, price: 6.25},
+    {id: 12, price: 3.75},
+]
 
-for(let i = 1; i < 13; i++){
-    const btn = document.getElementById(`order-btn-${i}`)
-    const shoppingBag = []
-    const products = [
-      { id: 1,  name: "Espresso",           price: 2.75, image: "assets/menu1.png"  },
-      { id: 2,  name: "Cappuccino",         price: 4.25, image: "assets/menu2.png"  },
-      { id: 3,  name: "Turkish Coffee",     price: 3.50, image: "assets/menu3.png"  },
-      { id: 4,  name: "Arabic Coffee",      price: 3.50, image: "assets/menu4.png"  },
-      { id: 5,  name: "Mint Tea",           price: 3.00, image: "assets/menu5.png"  },
-      { id: 6,  name: "Masala Chai",        price: 4.50, image: "assets/menu6.png"  },
-      { id: 7,  name: "Cafe de Olla",       price: 4.50, image: "assets/menu7.png"  },
-      { id: 8,  name: "Vietnamese Coffee",  price: 5.25, image: "assets/menu8.png"  },
-      { id: 9,  name: "Chocolate milkshake", price: 5.75, image: "assets/menu9.png" },
-      { id: 10, name: "Hot Chocolate",      price: 4.25, image: "assets/menu10.png" },
-      { id: 11, name: "Bubble Tea",         price: 6.25, image: "assets/menu11.png" },
-      { id: 12, name: "Cortado",            price: 3.75, image: "assets/menu12.png" }
-    ];
 
-    btn.addEventListener('click', () => {
+function removeAndAdd(sellsProductNum){
+    sellsNumTotale.classList.remove('hidden');
+    sellsNumTotale.classList.add('absolute');
 
-        count++;
-        sellsNum.textContent = count;
-
-        sellsNum.classList.remove('hidden');
-        sellsNum.classList.add('absolute');
-
-        shoppingBag.push(i)
-    })
-    
-    for(let j = 0; j < shoppingBag.length; j++){
-        const item = `
-            
-        `
-    }
+    sellsProductNum.classList.remove('hidden');
+    sellsProductNum.classList.add('absolute');
 }
 
+for(let i = 1; i < 13; i++){
+    const addbtn = document.getElementById(`add-btn-${i}`);
+    const removebtn = document.getElementById(`remove-btn-${i}`);
+    const sellsProductNum = document.getElementById(`sells-product-num-${i}`);
+    let count = 0;
+
+    if(!addbtn || !removebtn || !sellsNumTotale) continue;
+
+    addbtn.addEventListener('click', () => {
+
+        count++;
+        countToltale++;
+        
+        cartShoppingBag.push(i)
+
+        let totalePrice = cartShoppingBag.reduce((sem, number) => {
+            const foundItem = prices.find(item => item.id === number);
+            return sem + (foundItem ? foundItem.price : 0);
+        }, 0);
+
+        totalePriceCust.textContent = `${totalePrice}$`;
+
+        sellsNumTotale.textContent = countToltale;
+        sellsProductNum.textContent = count;
+
+        removeAndAdd(sellsProductNum);
+
+    })
+
+    removebtn.addEventListener('click', () => {
+
+        count -= 1;
+        countToltale -= 1;
+        
+        lastIndex = cartShoppingBag.lastIndexOf(i)
+        if(lastIndex !== -1){
+            cartShoppingBag.splice(lastIndex, 1)
+        }
+        
+        let totalePrice = cartShoppingBag.reduce((sem, number) => {
+            const foundItem = prices.find(item => item.id === number);
+            return sem + (foundItem ? foundItem.price : 0);
+        }, 0);
+
+        if (count >= 0 && countToltale >= 0){
+
+            sellsNumTotale.textContent = countToltale;
+            sellsProductNum.textContent = count; 
+
+            totalePriceCust.textContent = `${totalePrice}$`
+
+            removeAndAdd(sellsProductNum);
+        }else{
+            alert('You can not reduce it any further than this !')
+        }
+    })
+}
 
 cartShopping.addEventListener('click', () => {
 
-    productsSection.classList.toggle('right-370');
-
-})
-
+    if (productsSection.classList.contains('-right-370')) {
+        productsSection.classList.remove('-right-370');
+        productsSection.classList.add('right-187');
+    } 
+    else {
+        productsSection.classList.remove('right-187');
+        productsSection.classList.add('-right-370');
+    }
+});

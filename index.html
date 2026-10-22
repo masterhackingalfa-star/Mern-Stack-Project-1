@@ -92,11 +92,12 @@
     <section id="prices" class="relative h-[160vh] overflow-hidden">
             <div class="fixed top-60 right-5 shadow-md shadow-white rounded-full hover:shadow-lg hover:shadow-white" id="cart-shopping">
                 <div class="flex items-center justify-center w-12 h-12 bg-orange-800 rounded-full transition duration-300 hover:scale-110"><i class="fa-solid fa-cart-shopping text-white text-2xl"></i></div>
-                <div class="hidden -top-1 -right-1 w-5 h-5 text-center rounded-full text-white mb-8 bg-red-500" id="number-sells"></div>
+                <div class="hidden -top-1 -right-1 w-5 h-5 text-center rounded-full text-white mb-8 bg-red-500" id="number-sells-totale"></div>
             </div>
 
-            <div class="fixed grid grid-cols-3 gap-4 w-1/2 h-full top-10 right-185 p-12 bg-purple-700 transition-all duration-300 overflow-y-auto" id="products-section">
-                <div class=" absolute w-24 h-12 text-white text-2xl top-7 right-5 rounded-lg bg-amber-800" id="total-price"><h1></h1></div>
+            <div class="fixed flex items-center justify-center w-1/2 h-full top-10 -right-187 p-12 bg-purple-700 transition-all duration-300 overflow-y-auto" id="products-section">
+                <div class="absolute flex items-center justify-center w-64 h-20 text-white text-4xl top-20 right-auto rounded-lg font-playwrite bg-amber-800"><h1 id="total-price"></h1></div>
+                <button class="w-58 h-14 text-white text-xl font-playwrite  bg-blue-500 rounded-lg transition duration-300 cursor-pointer hover:bg-blue-400 hover:scale-110" id="order-products">Order All products</button>
             </div>
 
         <div class="flex flex-col items-center justify-start h-full p-5 gap-10 bg-red-950 from-red-950 to-amber-900">
@@ -104,112 +105,148 @@
             <h1 class="text-3xl font-isometra"><span class="text-stone-600">From Th</span><span class="text-red-200">e Menu</span></h1>
             <div class="grid grid-cols-4 gap-5">
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-1">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-1"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu1.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Espresso</h3>
                     <span class="text-2xl font-isometra text-red-500">$2.75</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-1">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300  hover:bg-blue-600" id=add-btn-1">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300  hover:bg-blue-600" id=remove-btn-1">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-2">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-2"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu2.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Cappuccino</h3>
                     <span class="text-2xl font-isometra text-red-500">$4.25</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-2">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  transition duration-300 bg-blue-500 hover:bg-blue-600" id="add-btn-2">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  transition duration-300 bg-blue-500 hover:bg-blue-600" id="remove-btn-2">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-3">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-3"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu3.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Turkish Coffee</h3>
                     <span class="text-2xl font-isometra text-red-500">$3.50</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-3">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-3">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-3">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-4">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-4"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu4.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Arabic Coffee</h3>
                     <span class="text-2xl font-isometra text-red-500">$3.50</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-4">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-4">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-4">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-5">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-5"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu5.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Mint Tea</h3>
                     <span class="text-2xl font-isometra text-red-500">$3.00</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-5">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-5">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-5">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-6">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-6"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu6.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Masala Chai</h3>
                     <span class="text-2xl font-isometra text-red-500">$4.50</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 transition duration-300  font-playwrite hover:bg-blue-600" id="order-btn-6">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-6">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-6">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-7">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-7"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu7.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Cafe de Olla</h3>
                     <span class="text-2xl font-isometra text-red-500">$4.50</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-7">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-7">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-7">-</button>
+                    </div>
                 </div>           
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-8">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-8"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu8.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Vietnamese Coffee</h3>
                     <span class="text-2xl font-isometra text-red-500">$5.25</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-8">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-8">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-8">-</button>
+                    </div>
                 </div>                 
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-9">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-9"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu9.png" alt="" class="max-h-full max-w-full object-contain ">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Chocolate milkshake</h3>
                     <span class="text-2xl font-isometra text-red-500">$5.75</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-9">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-9">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-9">-</button>
+                    </div>
                 </div>                 
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-10">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-10"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu10.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Hot Chocolate</h3>
                     <span class="text-2xl font-isometra text-red-500">$4.25</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-10">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-10">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-10">-</button>
+                    </div>
                 </div>                 
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-11">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-11"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu11.png" alt="" class="max-h-full max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Bubble Tea</h3>
                     <span class="text-2xl font-isometra text-red-500">$6.25</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer  bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-11">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="add-btn-11">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer  bg-blue-500 transition duration-300 hover:bg-blue-600" id="remove-btn-11">-</button>
+                    </div>
                 </div>                 
                 <div class="flex flex-col items-center rounded-lg w-74 h-74 bg-zinc-700 transition duration-300 hover:scale-90" id="menu-item-12">
-                    <div class="hidden w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600"></div>
+                    <div class="hidden text-white text-center text-xl w-8 h-8 rounded-full ml-70 -mt-2 bg-red-600" id="sells-product-num-12"></div>
                     <div class="h-44 w-full flex items-center justify-center">
                         <img src="assets/menu12.png" alt="" class="h-36 max-w-full object-contain">
                     </div>
                     <h3 class="text-xl text-white font-isometra">Cortado</h3>
                     <span class="text-2xl font-isometra text-red-500">$3.75</span>
-                    <button class="text-white px-6 py-1 mt-2 rounded-lg cursor-pointer bg-blue-500 font-playwrite transition duration-300 hover:bg-blue-600" id="order-btn-12">ORDER</button>
+                    <div class="flex items-center justify-center gap-8">
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer bg-blue-500  transition duration-300 hover:bg-blue-600" id="add-btn-12">+</button>
+                        <button class="text-white text-xl px-2 py-auto mt-2 p-2 rounded-full cursor-pointer bg-blue-500  transition duration-300 hover:bg-blue-600" id="remove-btn-12">-</button>
+                    </div>
                 </div>                 
             </div>
         </div>
